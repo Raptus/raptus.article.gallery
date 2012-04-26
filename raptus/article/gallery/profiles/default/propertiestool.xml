@@ -7,6 +7,7 @@
   <property name="images_galleryright_height" type="int" purge="False">0</property>
   <property name="images_gallerycolumns_width" type="int" purge="False">200</property>
   <property name="images_gallerycolumns_height" type="int" purge="False">0</property>
+  <property name="gallery_rel_attribute" type="string" purge="False">lightbox</property>
   <property name="gallery_columns" type="int" purge="False">3</property>
   <property name="gallery_columns_cropheight" type="int" purge="False">130</property>
   <property name="gallery_columns_cropwidth" type="int" purge="False">0</property>
@@ -17,5 +18,7 @@
   <property name="gallery_left_description" type="boolean" purge="False">False</property>
   <property name="gallery_right_description" type="boolean" purge="False">False</property>
   <property name="gallery_columns_description" type="boolean" purge="False">False</property>
+
  </object>
 </object>
+

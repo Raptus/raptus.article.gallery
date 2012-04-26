@@ -59,8 +59,11 @@ class ViewletLeft(ViewletBase):
 
     @property
     def show_description(self):
+        return self._getProperty('gallery_%s_description' % self.type, False)
+
+    def _getProperty(self, propertyName, default=None):
         props = getToolByName(self.context, 'portal_properties').raptus_article
-        return props.getProperty('gallery_%s_description' % self.type, False)
+        return props.getProperty(propertyName, default)
 
     @property
     @memoize
@@ -75,6 +78,8 @@ class ViewletLeft(ViewletBase):
         items = manageable.getList(items, self.component)
         i = 0
         l = len(items)
+        relAttribute = self._getProperty('gallery_rel_attribute','lightbox')
+
         for item in items:
             img = IImage(item['obj'])
             item.update({'caption': img.getCaption(),
@@ -88,7 +93,7 @@ class ViewletLeft(ViewletBase):
             w, h = item['obj'].getSize()
             tw, th = img.getSize(self.thumb_size)
             if (tw < w and tw > 0) or (th < h and th > 0):
-                item['rel'] = 'lightbox[%s]' % self.css_class
+                item['rel'] = '%s[%s]' % (relAttribute, self.css_class)
                 item['url'] = img.getImageURL(size="popup")
             i += 1
         return items
@@ -148,7 +153,6 @@ class ViewletColumns(ViewletLeft):
     type = "columns"
 
     def _class(self, brain, i, l):
-        props = getToolByName(self.context, 'portal_properties').raptus_article
-        i = i % props.getProperty('gallery_columns', 3)
-        return super(ViewletColumns, self)._class(brain, i, props.getProperty('gallery_columns', 3))
+        i = i % self._getProperty('gallery_columns', 3)
+        return super(ViewletColumns, self)._class(brain, i, self._getProperty('gallery_columns', 3))
 

@@ -15,6 +15,22 @@ Dependencies
 ------------
     * raptus.article.images
 
+
+Configuration
+-------------
+
+
+JS Picture Galleries
+````````````````````
+
+By default this component opens images in a `Products.jsImagePopups`_ gallery.
+
+To use `collective.prettyphoto`_ install the package and set the property
+``gallery_rel_attribute`` to ``prettyPhoto``.
+
+.. _`Products.jsImagePopups`: http://pypi.python.org/pypi/Products.jsImagePopups
+.. _`collective.prettyphoto`: http://pypi.python.org/pypi/collective.prettyphoto
+
 Installation
 ============
 
@@ -61,5 +77,5 @@ in the article in which this component is active.
 Copyright and credits
 =====================
 
-raptus.article is copyrighted by `Raptus AG <http://raptus.com>`_ and licensed under the GPL. 
+raptus.article is copyrighted by `Raptus AG <http://raptus.com>`_ and licensed under the GPL.
 See LICENSE.txt for details.

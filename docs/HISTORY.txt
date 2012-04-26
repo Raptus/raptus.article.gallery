@@ -1,6 +1,14 @@
 Changelog
 =========
 
+after 2.0b8
+-----------
+
+* Add a property ``gallery_rel_attribute`` to be able to use a js-gallery
+  product other than `Products.jsImagePopups`.
+
+  eg set it to ``prettyPhoto`` to use `collective.prettyphoto`.
+
 2.0b8 (2011-03-21)
 ------------------
 
