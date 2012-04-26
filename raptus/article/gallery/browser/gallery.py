@@ -93,16 +93,18 @@ class ViewletLeft(ViewletBase):
                          'img': img.getImage(self.thumb_size),
                          'description': item['brain'].Description,
                          'rel': None,
-                         'url': None})
+                         'url': None,
+                         'viewUrl': None})
             if item.has_key('show') and item['show']:
                 item['class'] += ' hidden'
-            if i>=self.maxItems and not canManage:
+            if (self.maxItems and i>=self.maxItems) and not canManage:
                 item['class'] += ' invisible'
             w, h = item['obj'].getSize()
             tw, th = img.getSize(self.thumb_size)
             if (tw < w and tw > 0) or (th < h and th > 0):
                 item['rel'] = '%s[%s]' % (relAttribute, self.css_class)
                 item['url'] = img.getImageURL(size="popup")
+                item['viewUrl'] = item['obj'].absolute_url()+ '/view'
             i += 1
         return items
 

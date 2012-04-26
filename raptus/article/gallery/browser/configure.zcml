@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:article="http://namespaces.zope.org/article"
+    xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="raptus.article">
 
     <article:component
@@ -23,5 +24,10 @@
         selection=".gallery.IATImage"
         viewlet=".gallery.ViewletColumns"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody" />
+
+    <browser:resource
+        name="raptus.article.gallery.js"
+        file="gallery.js"
+    />
 
 </configure>

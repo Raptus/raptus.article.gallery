@@ -14,6 +14,12 @@ after 2.0b8
   to be displayed.
   [fRiSi]
 
+* For SEO reasons, the images link to article/image1/view now (used
+  to link to article/image1/image in preview size)
+
+  An additional javascript fixes the link for the javascript galleries.
+  [fRiSi]
+
 2.0b8 (2011-03-21)
 ------------------
 

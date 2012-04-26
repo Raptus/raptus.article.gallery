@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts" meta_type="JavaScripts Registry">
+
+    <javascript id="++resource++raptus.article.gallery.js"
+                cacheable="True"
+                compression="safe"
+                cookable="True"
+                enabled="True"
+                expression=""
+                inline="False"
+                insert-after="plone_javascript_variables.js" />
+
+</object>
