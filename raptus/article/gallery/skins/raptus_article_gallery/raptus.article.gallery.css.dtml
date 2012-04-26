@@ -118,4 +118,8 @@ ul.gallery-columns .teaser {
   margin-bottom:0.5em;
 }
 
+ul.gallery li.invisible {
+  display:none !important;
+}
+
 /* </dtml-with> */

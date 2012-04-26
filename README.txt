@@ -19,9 +19,17 @@ Dependencies
 Configuration
 -------------
 
+Maximum number of Items
+```````````````````````
 
-JS Picture Galleries
-````````````````````
+Use the ``gallery_left_maxitems`` (``gallery_right_maxitems`` and
+``gallery_columns_maxitems`` respectively) property to limit the
+number of images shown in a gallery.
+(The `Javascript popup`_ will display the other images as well)
+
+
+Javscript popup
+```````````````
 
 By default this component opens images in a `Products.jsImagePopups`_ gallery.
 
@@ -79,3 +87,11 @@ Copyright and credits
 
 raptus.article is copyrighted by `Raptus AG <http://raptus.com>`_ and licensed under the GPL.
 See LICENSE.txt for details.
+
+Credits:
+
+* Harald Frießnegger (fRiSi), `Webmeisterei GmbH`_
+
+  additional configuration options, support for prettyPhoto
+
+.. _`Webmeisterei GmbH`: http://webmeisterei.com

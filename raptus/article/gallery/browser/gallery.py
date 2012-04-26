@@ -61,6 +61,10 @@ class ViewletLeft(ViewletBase):
     def show_description(self):
         return self._getProperty('gallery_%s_description' % self.type, False)
 
+    @property
+    def maxItems(self):
+        return self._getProperty('gallery_%s_maxitems' % self.type, 0)
+
     def _getProperty(self, propertyName, default=None):
         props = getToolByName(self.context, 'portal_properties').raptus_article
         return props.getProperty(propertyName, default)
@@ -71,10 +75,12 @@ class ViewletLeft(ViewletBase):
         provider = IImages(self.context)
         manageable = interfaces.IManageable(self.context)
         mship = getToolByName(self.context, 'portal_membership')
-        if mship.checkPermission(MANAGE_PERMISSION, self.context):
+        canManage = mship.checkPermission(MANAGE_PERMISSION, self.context)
+        if canManage:
             items = provider.getImages()
         else:
             items = provider.getImages(component=self.component)
+
         items = manageable.getList(items, self.component)
         i = 0
         l = len(items)
@@ -90,6 +96,8 @@ class ViewletLeft(ViewletBase):
                          'url': None})
             if item.has_key('show') and item['show']:
                 item['class'] += ' hidden'
+            if i>=self.maxItems and not canManage:
+                item['class'] += ' invisible'
             w, h = item['obj'].getSize()
             tw, th = img.getSize(self.thumb_size)
             if (tw < w and tw > 0) or (th < h and th > 0):

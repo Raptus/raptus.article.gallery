@@ -18,7 +18,8 @@
   <property name="gallery_left_description" type="boolean" purge="False">False</property>
   <property name="gallery_right_description" type="boolean" purge="False">False</property>
   <property name="gallery_columns_description" type="boolean" purge="False">False</property>
-
+  <property name="gallery_left_maxitems" type="int" purge="False">0</property>
+  <property name="gallery_right_maxitems" type="int" purge="False">0</property>
+  <property name="gallery_columns_maxitems" type="int" purge="False">0</property>
  </object>
 </object>
-

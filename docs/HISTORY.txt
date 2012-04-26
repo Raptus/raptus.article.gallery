@@ -8,6 +8,11 @@ after 2.0b8
   product other than `Products.jsImagePopups`.
 
   eg set it to ``prettyPhoto`` to use `collective.prettyphoto`.
+  [fRiSi]
+
+* Added property to configure the maximum number of gallery items
+  to be displayed.
+  [fRiSi]
 
 2.0b8 (2011-03-21)
 ------------------
