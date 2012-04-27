@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>2.0b8</version>
+  <version>0003</version>
   <dependencies>
     <dependency>profile-raptus.article.images:default</dependency>
   </dependencies>
