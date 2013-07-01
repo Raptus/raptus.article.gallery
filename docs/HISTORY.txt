@@ -1,8 +1,10 @@
 Changelog
 =========
 
-after 2.0b8
------------
+2.0b9 (unreleased)
+------------------
+
+* Only show hidden images when in editing mode (introduced in raptus.article.core 2.0b13)
 
 * Add a property ``gallery_rel_attribute`` to be able to use a js-gallery
   product other than `Products.jsImagePopups`.

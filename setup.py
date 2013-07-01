@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '2.0b8'
+version = '2.0b9.dev0'
 
 setup(name='raptus.article.gallery',
       version=version,
@@ -25,7 +25,7 @@ setup(name='raptus.article.gallery',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'raptus.article.core>=2.0b8',
+          'raptus.article.core>2.0b12',
           'raptus.article.images',
           # -*- Extra requirements: -*-
       ],

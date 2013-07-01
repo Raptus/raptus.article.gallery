@@ -75,7 +75,7 @@ class ViewletLeft(ViewletBase):
         provider = IImages(self.context)
         manageable = interfaces.IManageable(self.context)
         mship = getToolByName(self.context, 'portal_membership')
-        canManage = mship.checkPermission(MANAGE_PERMISSION, self.context)
+        canManage = interfaces.IArticleEditView.providedBy(self.view) and mship.checkPermission(MANAGE_PERMISSION, self.context)
         if canManage:
             items = provider.getImages()
         else:
