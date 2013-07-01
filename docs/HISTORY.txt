@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0b9 (unreleased)
+2.0b9 (2013-07-01)
 ------------------
 
 * Only show hidden images when in editing mode (introduced in raptus.article.core 2.0b13)
