@@ -4,7 +4,7 @@ Changelog
 2.0b10 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Added italian translation [davidemoro]
 
 
 2.0b9 (2013-07-01)
