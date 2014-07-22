@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0b10 (unreleased)
+2.0b10 (2014-07-22)
 -------------------
 
 - Added italian translation [davidemoro]
