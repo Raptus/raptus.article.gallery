@@ -91,6 +91,7 @@ class ViewletLeft(ViewletBase):
             item.update({'caption': img.getCaption(),
                          'class': self._class(item['brain'], i, l),
                          'img': img.getImage(self.thumb_size),
+                         'img_url': img.getImageURL(self.thumb_size),
                          'description': item['brain'].Description,
                          'rel': None,
                          'url': None,

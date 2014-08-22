@@ -4,9 +4,12 @@ Changelog
 2.0b11 (unreleased)
 -------------------
 
-- Add attributes data-title and data-desc to the image links that can be used
-  by JS Galleries to display title and descrition.
+- Add attributes ``data-title`` and ``data-desc`` to the image links that can be
+  used by JS Galleries to display title and descrition. [fRiSi]
 
+- Add ``img_url`` key to the data-dictionary so customized templates can build
+  an image tag instead of beeing limited to what ``IImage.getImage(size)``
+  returns. [fRiSi]
 
 2.0b10 (2014-07-22)
 -------------------
