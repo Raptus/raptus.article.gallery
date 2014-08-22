@@ -4,7 +4,8 @@ Changelog
 2.0b11 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Add attributes data-title and data-desc to the image links that can be used
+  by JS Galleries to display title and descrition.
 
 
 2.0b10 (2014-07-22)

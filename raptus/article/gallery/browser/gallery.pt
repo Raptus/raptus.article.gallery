@@ -19,6 +19,8 @@
                tal:attributes="href item/viewUrl;
                                rel item/rel;
                                title item/caption;
+                               data-title item/brain/Title;
+                               data-desc item/description;
                                data-popupUrl item/url">
                 <span tal:omit-tag="item/url">
                     <img src="" tal:replace="structure item/img" />
