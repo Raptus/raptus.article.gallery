@@ -5,6 +5,9 @@ from Products.CMFCore.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import ViewletBase
 from plone.memoize.instance import memoize
+from plone.registry.interfaces import IRegistry
+
+
 
 try: # Plone 4 and higher
     from Products.ATContentTypes.interfaces.image import IATImage
@@ -63,7 +66,7 @@ class ViewletLeft(ViewletBase):
         self.maxItems = props.getProperty('gallery_%s_maxitems' % self.type, 0)
         self.relAttr = props.getProperty('gallery_rel_attribute', 'lightbox')
         self.scale = props.getProperty('images_gallery%s_scale' % self.type, None)
-        self.use_scale = self.scale is not None
+
 
     def _class(self, brain, i, l):
         cls = []
@@ -81,6 +84,27 @@ class ViewletLeft(ViewletBase):
     def _getProperty(self, propertyName, default=None):
         props = getToolByName(self.context, 'portal_properties').raptus_article
         return props.getProperty(propertyName, default)
+
+    @property
+    @memoize
+    def showCropping(self):
+        """Returns True the following conditions are met:
+        * plone.app.imagecropping is installed
+        * the component uses a plone.app.imaging scale for the gallery image
+        * and the scale is croppable
+        """
+        if self.scale is None or not HAS_CROPPING:
+            return False
+
+        from plone.app.imagecropping.browser.settings import ISettings
+        registry = component.getUtility(IRegistry)
+        settings = registry.forInterface(ISettings)
+        if not settings.constrain_cropping:
+            return True
+        elif self.scale in settings.cropping_for:
+            return True
+
+        return False
 
     @property
     @memoize
@@ -118,7 +142,7 @@ class ViewletLeft(ViewletBase):
                 item['rel'] = '%s[%s]' % (self.relAttr, self.css_class)
                 item['url'] = img.getImageURL(size="popup")
                 item['viewUrl'] = item['obj'].absolute_url() + '/view'
-            if canManage and self.use_scale and HAS_CROPPING:
+            if canManage and self.showCropping:
                 item['crop'] = '%s/@@croppingeditor?scalename=%s' % (item['obj'].absolute_url(), self.scale)
             i += 1
         return items
