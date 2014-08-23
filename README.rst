@@ -28,8 +28,8 @@ number of images shown in a gallery.
 (The `Javascript popup`_ will display the other images as well)
 
 
-Javscript popup
-```````````````
+Javascript popup
+````````````````
 
 By default this component opens images in a `Products.jsImagePopups`_ gallery.
 
@@ -38,6 +38,37 @@ To use `collective.prettyphoto`_ install the package and set the property
 
 .. _`Products.jsImagePopups`: http://pypi.python.org/pypi/Products.jsImagePopups
 .. _`collective.prettyphoto`: http://pypi.python.org/pypi/collective.prettyphoto
+
+
+plone.app.imaging
+`````````````````
+
+
+To use plone.app.imaging scales simply set the corresponding properties to the
+name if the image scale.
+
+If present, those will overrule the width and height settings.
+
+available properties:
+
+* ``images_galleryleft_scale``
+* ``images_galleryright_scale``
+* ``images_gallerycolumns_scale``
+* ``imagse_popup_scale``
+
+
+plone.app.imagecropping
+```````````````````````
+
+If you use scales for the image dimensions and `plone.app.imagecropping`__ is
+installed you'll see a cropping icon in the management links for the gallery
+items (when you are in component editing mode)
+
+This icon will open an overlay to define the cropping region for the used scale
+and update the image when the dialog is closed
+
+.. __: https://pypi.python.org/pypi/plone.app.imagecropping
+
 
 Installation
 ============
@@ -92,6 +123,7 @@ Credits:
 
 * Harald Frießnegger (fRiSi), `Webmeisterei GmbH`_
 
-  additional configuration options, support for prettyPhoto
+  additional configuration options, support for `collective.prettyPhoto` and
+  `plone.app.imaging` scales
 
 .. _`Webmeisterei GmbH`: http://webmeisterei.com
