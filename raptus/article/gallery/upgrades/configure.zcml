@@ -1,0 +1,22 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:five="http://namespaces.zope.org/five"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  xmlns:gs="http://namespaces.zope.org/genericsetup">
+
+
+  <include file="profiles.zcml" />
+
+  <gs:upgradeSteps
+    source="0003"
+    destination="0004"
+    profile="raptus.article.gallery:default">
+
+    <gs:upgradeDepends
+      title="GS Profile: add scale properties"
+      import_profile="raptus.article.gallery.upgrades:0003_to_0004"
+      run_deps="True"/>
+
+  </gs:upgradeSteps>
+
+</configure>
