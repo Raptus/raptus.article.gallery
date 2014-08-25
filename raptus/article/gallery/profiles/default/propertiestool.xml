@@ -3,10 +3,13 @@
  <object name="raptus_article" meta_type="Plone Property Sheet" purge="False">
   <property name="images_galleryleft_width" type="int" purge="False">200</property>
   <property name="images_galleryleft_height" type="int" purge="False">0</property>
+  <property name="images_galleryleft_scale" type="string" purge="False"></property>
   <property name="images_galleryright_width" type="int" purge="False">200</property>
   <property name="images_galleryright_height" type="int" purge="False">0</property>
+  <property name="images_galleryright_scale" type="string" purge="False"></property>
   <property name="images_gallerycolumns_width" type="int" purge="False">200</property>
   <property name="images_gallerycolumns_height" type="int" purge="False">0</property>
+  <property name="images_gallerycolumns_scale" type="string" purge="False"></property>
   <property name="gallery_rel_attribute" type="string" purge="False">lightbox</property>
   <property name="gallery_columns" type="int" purge="False">3</property>
   <property name="gallery_columns_cropheight" type="int" purge="False">130</property>
