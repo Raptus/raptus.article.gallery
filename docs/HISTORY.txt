@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0b11 (unreleased)
+2.0b11 (2014-10-15)
 -------------------
 
 - Add support for plone.app.imaging scales to be able to use

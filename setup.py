@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '2.0b11.dev0'
+version = '2.0b11'
 
 setup(name='raptus.article.gallery',
       version=version,
